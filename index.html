@@ -8,10 +8,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:black;color:white;font-family:Arial,sans-serif;overflow:hidden;cursor:pointer}
+* { margin:0; padding:0; box-sizing:border-box; }
 
-.slide{
+body {
+  background:black;
+  font-family:Arial, sans-serif;
+  overflow:hidden;
+}
+
+.slide {
   display:none;
   height:100vh;
   width:100vw;
@@ -19,45 +24,56 @@ body{background:black;color:white;font-family:Arial,sans-serif;overflow:hidden;c
   justify-content:center;
   flex-direction:column;
   text-align:center;
-  padding:20px
+  padding:20px;
 }
-.active{display:flex}
 
-.pink{color:#ff6ec7}
-.purple{color:#b46cff}
+.slide.active {
+  display:flex;
+}
 
-h1{font-size:2.4rem;line-height:1.4}
+.pink { color:#ff6ec7; }
+.purple { color:#b46cff; }
 
-.sparkles{
-  background:radial-gradient(circle,rgba(255,255,255,.25) 2px,transparent 2px);
+h1 {
+  font-size:2.4rem;
+  line-height:1.4;
+}
+
+.sparkles {
+  background:radial-gradient(circle, rgba(255,255,255,.25) 2px, transparent 2px);
   background-size:40px 40px;
-  animation:sparkle 10s linear infinite
-}
-@keyframes sparkle{
-  from{background-position:0 0}
-  to{background-position:120px 120px}
+  animation:sparkle 10s linear infinite;
 }
 
-img{max-width:65%;margin-top:20px}
+@keyframes sparkle {
+  from { background-position:0 0; }
+  to { background-position:120px 120px; }
+}
 
-.bubble{
+img {
+  max-width:65%;
+  margin-top:20px;
+}
+
+.bubble {
   background:white;
   color:black;
   padding:8px 14px;
   border-radius:20px;
-  margin-bottom:10px
+  margin-bottom:10px;
 }
 
-.cake-emoji{
+.cake {
   font-size:6rem;
-  margin-top:20px
+  margin-top:20px;
 }
 
-.final{
-  font-family:'Pacifico',cursive
+.final {
+  font-family:'Pacifico', cursive;
 }
 </style>
 </head>
+
 <body>
 
 <!-- 1 -->
@@ -71,4 +87,45 @@ img{max-width:65%;margin-top:20px}
 </div>
 
 <!-- 3 -->
-<div class="sli
+<div class="slide">
+  <h1 class="pink">It’s a big year, you know.</h1>
+</div>
+
+<!-- 4 -->
+<div class="slide sparkles">
+  <h1 class="purple">Happy Birthday, fairy!!</h1>
+</div>
+
+<!-- 5 -->
+<div class="slide">
+  <div class="bubble">hi</div>
+  <img src="https://media.tenor.com/7w0k3G6KXbEAAAAi/kuromi-sanrio.gif">
+</div>
+
+<!-- 6 -->
+<div class="slide">
+  <img src="https://media.tenor.com/8c7YJj7p7qQAAAAi/kuromi-cute.gif">
+</div>
+
+<!-- 7 -->
+<div class="slide" id="cakeSlide">
+  <h1 class="purple">Blow into your phone 💨</h1>
+  <div class="cake">🎂🕯️🕯️🕯️</div>
+</div>
+
+<!-- 8 -->
+<div class="slide">
+  <div class="cake">🎂✨</div>
+</div>
+
+<!-- 9 -->
+<div class="slide">
+  <h1 class="purple final">
+    I hope this new year brings you one step closer to achieving your goals and dreams 💜<br><br>
+    YOU GO SAM<br><br>
+    HAPPY 18TH BIRTHDAY AGAIN
+  </h1>
+</div>
+
+<script>
+const slides = document.querySe
