@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 18th 💜</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.slide {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.slide.active {
+  display: flex;
+}
+
+.pink { color: #ff69b4; }
+.purple { color: #c77dff; }
+
+.sparkles {
+  background:
+    radial-gradient(#fff 1px, transparent 1px),
+    radial-gradient(#fff 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: sparkle 2s linear infinite;
+}
+
+@keyframes sparkle {
+  from { background-position: 0 0, 20px 20px; }
+  to { background-position: 40px 40px, 60px 60px; }
+}
+
+img {
+  max-width: 80%;
+  height: auto;
+}
+
+/* 🎂 CAKE + CANDLES */
+.cake {
+  position: relative;
+  font-size: 140px;
+}
+
+.candles {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.candle {
+  width: 10px;
+  height: 30px;
+  background: white;
+  position: relative;
+}
+
+.flame {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 16px;
+  background: orange;
+  border-radius: 50%;
+  animation: flicker 0.3s infinite alternate;
+}
+
+@keyframes flicker {
+  from { transform: translateX(-50%) scale(1); }
+  to { transform: translateX(-50%) scale(0.8); }
+}
+
+.blown .flame {
+  display: none;
+}
+
+.cute-font {
+  font-family: 'Pacifico', cursive;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 1 -->
+<div class="slide active pink">
+  <h1>Hey there, GORGEOUS 💖</h1>
+</div>
+
+<!-- 2 -->
+<div class="slide purple">
+  <h1>You’re 18 now!! 💜</h1>
+</div>
+
+<!-- 3 -->
+<div class="slide pink">
+  <h1>It’s a big year, you know ✨</h1>
+</div>
+
+<!-- 4 -->
+<div class="slide sparkles purple">
+  <h1>Happy Birthday, fairy!! 🧚‍♀️💜</h1>
+</div>
+
+<!-- 5 -->
+<div class="slide">
+  <img src="kuromi-wave.gif" alt="Kuromi waving">
+  <h2 class="pink">Hi 👋</h2>
+</div>
+
+<!-- 6 -->
+<div class="slide">
+  <img src="kuromi-cake.gif" alt="Kuromi with cake">
+</div>
+
+<!-- 7 -->
+<div class="slide" id="candleSlide">
+  <div class="cake" id="cake">
+    🎂
+    <div class="candles">
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+    </div>
+  </div>
+  <h2 class="pink">Tap to blow candles 💨</h2>
+</div>
+
+<!-- 8 -->
+<div class="slide">
+  <h1 class="pink">Cake cut 🎉🍰</h1>
+</div>
+
+<!-- 9 -->
+<div class="slide purple cute-font">
+  <h2>
+    I hope this new year brings you one step closer to achieving your goals and dreams 💜<br><br>
+    YOU GO SAM ✨<br><br>
+    HAPPY 18TH BIRTHDAY AGAIN 🎉
+  </h2>
+</div>
+
+<script>
+const slides = document.querySelectorAll(".slide");
+let current = 0;
+let candlesBlown = false;
+
+document.body.addEventListener("click", () => {
+  if (slides[current].id === "candleSlide" && !candlesBlown) {
+    document.getElementById("cake").classList.add("blown");
+    candlesBlown = true;
+    return;
+  }
+
+  if (current < slides.length - 1) {
+    slides[current].classList.remove("active");
+    current++;
+    slides[current].classList.add("active");
+  }
+});
+</script>
+
+</body>
+</html>
